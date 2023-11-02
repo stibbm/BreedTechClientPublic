@@ -1,0 +1,41 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-title>
+      Move Horse (Only displays horses with active appointments)
+    </ion-title>
+  </ion-item>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" class="cell-title">Horse</ion-col>
+      <ion-col class="cell-class">
+        <!--<app-horse-selector
+          #horseSelectorComponent
+        >
+        </app-horse-selector>-->
+        <app-horse-selector-by-active-appointment
+          #horseSelectorByActiveAppointmentComponent
+        >
+        </app-horse-selector-by-active-appointment>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell-title">Stall</ion-col>
+      <ion-col class="cell-class">
+        <app-stall-selector #stallSelectorComponent></app-stall-selector>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item>
+    <ion-button
+      (click)="onMoveHorseButtonPressed()"
+      color="danger"
+      expand="block"
+
+    >Move Horse</ion-button>
+  </ion-item>
+</ion-content>

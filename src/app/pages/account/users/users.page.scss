@@ -1,0 +1,21 @@
+.cell-title {
+  border-color: black;
+  border-width: .01em;
+  border-style: solid; margin-bottom : -1px;
+  background-color: orangered;
+  color: white;
+  expand: block;
+};
+
+.cell-class {
+  border-color: black;
+  border-width: .01em;
+  border-style: solid; margin-bottom : -1px;
+  color: black;
+  expand: block;
+  background-color: white;
+};
+
+ion-row {
+  margin: 5px;
+}

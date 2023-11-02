@@ -1,0 +1,24 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      Selected stall: {{this.stallOccupancyDisplayable.name}}
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <app-horse-selector
+      #horseSelectorComponent
+    >
+    </app-horse-selector>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      fill="outline"
+      (click)="this.onMoveHorseButtonPressed()"
+    >
+      Move Horse
+    </ion-button>
+  </ion-item>
+</ion-content>

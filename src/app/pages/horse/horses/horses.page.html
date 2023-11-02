@@ -1,0 +1,54 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-title>
+      Horses
+    </ion-title>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      color="danger"
+      expand="block"
+      (click)="this.goToCreateHorsePage()"
+    >
+      Create Horse
+    </ion-button>
+    <ion-button
+      color="danger"
+      expand="block"
+      (click)="this.goToMoveHorsePage()"
+    >
+      Move Horse
+    </ion-button>
+  </ion-item>
+
+  <ion-item *ngIf="this.isHorsesV2ListLoaded">
+    <ion-grid class="scroll">
+      <ion-row>
+        <ion-col size="1.5" class="cell-title">Horse Name</ion-col>
+        <ion-col size="1.5" class="cell-title">Horse Reg #</ion-col>
+        <ion-col size="1.5" class="cell-title">Is Stallion</ion-col>
+        <ion-col size="1.5" class="cell-title">Dam</ion-col>
+        <ion-col size="1.5" class="cell-title">Sire</ion-col>
+        <ion-col size="1.5" class="cell-title">Dam Sire</ion-col>
+        <ion-col size="1.5" class="cell-title">Owner</ion-col>
+        <ion-col size="1.5" class="cell-title">Stall</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let horse of this.horsesV2List" tappable (click)="goToHorseDetailsPage(horse)">
+        <ion-col size="1.5" class="cell-class">{{this.horse.horseName}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{this.horse.horseRegistrationNumber}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{this.horse.isStallion}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{this.horse.damName}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{this.horse.sireName}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{this.horse.damSireName}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{this.horse.ownerFirstAndLastName}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{this.horse.stallName}}</ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-item>
+
+</ion-content>
+

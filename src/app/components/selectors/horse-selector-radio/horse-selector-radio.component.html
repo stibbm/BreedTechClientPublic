@@ -1,0 +1,23 @@
+<ion-item *ngIf="this.isHorseV2sListLoaded">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="cell-class">
+        <ion-radio-group
+          [(ngModel)]="this.horseV2"
+        >
+          <ion-item *ngFor="let horseV2 of this.horseV2sList">
+            <ion-grid>
+              <ion-row>
+                {{horseV2.horseName}}
+              </ion-row>
+              <ion-row>
+                {{horseV2.horseRegistrationNumber}}
+              </ion-row>
+            </ion-grid>
+            <ion-radio slot="end" [value]="horseV2">{{horseV2.horseName}}</ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>

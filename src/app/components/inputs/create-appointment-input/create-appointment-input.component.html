@@ -1,0 +1,43 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="2" class="cell-title">User</ion-col>
+    <ion-col size="8" class="cell-class">
+      <!--<app-user-selector
+        #userSelectorComponent
+        (userSelectorEventEmitter)="userSelectorEventEmitted($event)"
+      ></app-user-selector>-->
+      <app-user-selector-radio
+        #userSelectorRadioComponent
+      >
+      </app-user-selector-radio>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="2" class="cell-title">Horse</ion-col>
+    <ion-col size="8" class="cell-class">
+      <!--<app-horse-selector
+        #horseSelectorComponent
+      >
+
+      </app-horse-selector>-->
+      <app-horse-selector-radio
+        #horseSelectorRadioComponent
+      ></app-horse-selector-radio>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="2" class="cell-title">Reason for appointment</ion-col>
+    <ion-col size="8" class="cell-class">
+      <ion-input type="text" [(ngModel)]="this.appointmentReason"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="2" class="cell-title">Phone Number</ion-col>
+    <ion-col size="8" class="cell-class">
+      <ion-input type="text" [(ngModel)]="this.notificationsPhoneNumber"></ion-input>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>

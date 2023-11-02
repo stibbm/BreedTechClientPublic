@@ -1,0 +1,134 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true" *ngIf="this.isAppointmentV2Loaded">
+
+  <ion-item>
+    <ion-title>
+      Appointment Details
+    </ion-title>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      *ngIf="this.appointmentV2.appointmentStatus==='Scheduled'"
+      color="danger"
+      expand="block"
+      (click)="this.onCheckInAppointmentButtonPressed()"
+    >
+      Check In
+    </ion-button>
+    <ion-button
+      *ngIf="this.appointmentV2.appointmentStatus==='CheckedIn'"
+      color="danger"
+      expand="block"
+      (click)="this.onCompleteAppointmentButtonPressed()"
+    >
+      Complete
+    </ion-button>
+    <ion-button
+      *ngIf="this.appointmentV2.appointmentStatus==='Complete'"
+      color="danger"
+      expand="block"
+      (click)="this.onRevertToCheckedInButtonPressed()"
+    >
+      Revert Appointment Status to Checked In
+    </ion-button>
+    <ion-button
+      *ngIf="this.appointmentV2.appointmentStatus === 'CheckedIn'"
+      color="danger"
+      expand="block"
+      (click)="this.goToMoveHorsePage()"
+    >
+      Move Horse
+    </ion-button>
+  </ion-item>
+
+  <ion-item *ngIf="this.isAppointmentV2Loaded">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" class="cell-title">Id</ion-col>
+        <ion-col size="4" class="cell-class">{{this.appointmentV2.id}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="cell-title">Horse</ion-col>
+        <ion-col size="4" class="cell-class">{{this.appointmentV2.horse.name}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="cell-title">User</ion-col>
+        <ion-col size="4" class="cell-class">{{this.appointmentV2.user.firstName}} {{this.appointmentV2.user.lastName}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="cell-title">Status</ion-col>
+        <ion-col size="4" class="cell-class">{{this.appointmentV2.appointmentStatus}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item-divider></ion-item-divider>
+
+  <ion-item *ngIf="isGetAppointmentAmountDueResponseLoaded">
+    <ion-title>Cost Summary</ion-title>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      expand="block"
+      color="danger"
+      (click)="onAddPaymentButtonPressed()"
+    >
+      Add Payment
+    </ion-button>
+  </ion-item>
+
+  <ion-item *ngIf="this.isGetAppointmentAmountDueResponseLoaded">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" class="cell-title">Remaining Amount Due</ion-col>
+        <ion-col size="2" class="cell-title">Amount Paid</ion-col>
+        <ion-col size="2" class="cell-title">Total Cost</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="cell-class">${{this.getAppointmentAmountDueResponse.currentAmountDue/100}}</ion-col>
+        <ion-col size="2" class="cell-class">${{this.getAppointmentAmountDueResponse.totalAmountPaid/100}}</ion-col>
+        <ion-col size="2" class="cell-class">${{this.getAppointmentAmountDueResponse.totalAmountDue/100}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item-divider></ion-item-divider>
+
+  <ion-item><ion-title>Appointment Actions</ion-title></ion-item>
+  <ion-item>
+    <ion-button
+      color="danger"
+      (click)="this.onCreateAppointmentActionButtonPressed()"
+    >
+      Create Appointment Action
+    </ion-button>
+  </ion-item>
+  <ion-item *ngIf="this.isAppointmentActionsV3ListLoaded">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1.5" class="cell-title">Id</ion-col>
+        <ion-col size="1.5" class="cell-title">Description</ion-col>
+        <ion-col size="1.5" class="cell-title">Amount</ion-col>
+        <ion-col size="1.5" class="cell-title">Customer</ion-col>
+        <ion-col size="1.5" class="cell-title">Time</ion-col>
+        <ion-col size="1.5" class="cell-title">Text Message</ion-col>
+        <ion-col size="1.5" class="cell-title">Created By</ion-col>
+      </ion-row>
+      <ion-row
+        *ngFor="let appointmentAction of this.appointmentActionsV3List"
+        tappable (click)="goToAppointmentActionPage(appointmentAction)"
+      >
+        <ion-col size="1.5" class="cell-class">{{appointmentAction.id}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{appointmentAction.description}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{appointmentAction.amount}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{appointmentAction.customerFirstAndLastName}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{appointmentAction.humanReadableTimestamp}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{appointmentAction.smsMessage}}</ion-col>
+        <ion-col size="1.5" class="cell-class">{{appointmentAction.createdByUserFirstAndLastName}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-content>

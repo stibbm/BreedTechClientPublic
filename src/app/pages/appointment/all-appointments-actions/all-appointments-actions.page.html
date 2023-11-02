@@ -1,0 +1,49 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content>
+  <ion-item *ngIf="this.appointmentActionsV3ListLoaded">
+    <mat-table mat-table [dataSource]="this.appointmentActionsV3List">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>id</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="customerFirstAndLastName">
+        <th mat-header-cell *matHeaderCellDef>customerFirstAndLastName</th>
+        <td mat-cell *matCellDef="let element">{{element.customerFirstAndLastName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>description</th>
+        <td mat-cell *matCellDef="let element">{{element.description}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="humanReadableTimestamp">
+        <th mat-header-cell *matHeaderCellDef>humanReadableTimestamp</th>
+        <td mat-cell *matCellDef="let element">{{element.humanReadableTimestamp}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="createdByUserFirstAndLastName">
+        <th mat-header-cell *matHeaderCellDef>createdByUserFirstAndLastName</th>
+        <td mat-cell *matCellDef="let element">{{element.createdByUserFirstAndLastName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>amount</th>
+        <td mat-cell *matCellDef="let element">{{element.amount}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="smsMessage">
+        <th mat-header-cell *matHeaderCellDef>smsMessage</th>
+        <td mat-cell *matCellDef="let element">{{element.smsMessage}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayColumnsV2"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: this.displayColumnsV2">
+      </tr>
+
+    </mat-table>
+  </ion-item>
+</ion-content>

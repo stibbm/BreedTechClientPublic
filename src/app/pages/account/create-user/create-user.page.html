@@ -1,0 +1,58 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content>
+
+  <ion-item>
+    <ion-title>
+      Create User
+    </ion-title>
+  </ion-item>
+
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" class="cell-title">Email Address</ion-col>
+        <ion-col size="8" class="cell-class">
+          <ion-input
+            type="text"
+            [(ngModel)]="this.emailAddress"
+          >
+
+          </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="cell-title">First Name</ion-col>
+        <ion-col size="8" class="cell-class">
+
+          <ion-input
+            [(ngModel)]="this.firstName"
+            type="text"
+          ></ion-input>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="cell-title">Last Name</ion-col>
+        <ion-col size="8" class="cell-class">
+          <ion-input
+            [(ngModel)]="this.lastName"
+            type="text"
+          >
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-button
+      color="danger"
+      (click)="this.onCreateUserButtonPressed()"
+      expand="block"
+    >
+      Create
+    </ion-button>
+  </ion-item>
+
+</ion-content>

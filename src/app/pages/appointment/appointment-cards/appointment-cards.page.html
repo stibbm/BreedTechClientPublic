@@ -1,0 +1,50 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content>
+  <ion-item>
+    <ion-title>
+      Appointments
+    </ion-title>
+  </ion-item>
+  <ion-item>
+    <ion-button
+      (click)="this.gotToCreateAppointmentPage()"
+    >
+      Create Appointment
+    </ion-button>
+  </ion-item>
+  <ion-list>
+    <ion-card
+      *ngFor="let appointment of appointmentsList"
+      (click)="this.goToAppointmentPage(appointment)"
+      button="true"
+      style="width: 40em"
+    >
+      <ion-card-content>
+        <ion-grid>
+          <ion-col>
+            <ion-item>
+              <ion-text>
+                Id: {{appointment.id}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-text>
+                Horse: {{appointment.horse.name}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-text>
+                OwnerFirstAndLastName: {{appointment.user.lastName}}, {{appointment.user.firstName}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

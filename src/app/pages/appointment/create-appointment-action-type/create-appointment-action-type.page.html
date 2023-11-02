@@ -1,0 +1,73 @@
+<app-company-header-v2></app-company-header-v2>
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-title>
+      Create Appointment Action Type
+    </ion-title>
+  </ion-item>
+
+  <ion-item-divider></ion-item-divider>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Name</ion-col>
+      <ion-col size="4" class="cell-class">
+        <ion-input
+          type="text"
+          [(ngModel)]="this.name"
+        >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Description</ion-col>
+      <ion-col size="4" class="cell-class">
+        <ion-input
+          type="text"
+          [(ngModel)]="this.description"
+        >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Amount</ion-col>
+      <ion-col size="4" class="cell-class">
+        <ion-input
+          type="number"
+          [(ngModel)]="this.amountCents"
+        >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Sms Content</ion-col>
+      <ion-col size="4" class="cell-class">
+        <ion-input
+          type="text"
+          [(ngModel)]="this.smsMessage"
+        ></ion-input>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+  <ion-item>
+    <ion-button
+      (click)="this.onCreateAppointmentActionTypeButtonPressed()"
+      color="danger"
+      expand="block"
+    >
+      Create
+    </ion-button>
+  </ion-item>
+
+
+</ion-content>

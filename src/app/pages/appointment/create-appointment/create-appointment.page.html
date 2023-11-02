@@ -1,0 +1,17 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true">
+    <app-create-appointment-input
+      #createAppointmentInputComponent
+    >
+
+    </app-create-appointment-input>
+
+  <ion-item>
+    <ion-button
+      color="danger"
+      (click)="onCreateAppointmentButtonPressed()"
+      expand="block"
+    >Create Appointment</ion-button>
+  </ion-item>
+</ion-content>

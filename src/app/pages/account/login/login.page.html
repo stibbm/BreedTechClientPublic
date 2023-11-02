@@ -1,0 +1,20 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content class="ion-content">
+  <ion-item class="ion-content">
+    <ion-label>Email: </ion-label>
+    <ion-input type="text" [(ngModel)]="this.emailAddress"></ion-input>
+  </ion-item>
+  <ion-item class="ion-content">
+    <ion-label>Password: </ion-label>
+    <ion-input type="password" [(ngModel)]="this.password"></ion-input>
+  </ion-item>
+  <ion-item class="ion-content">
+    <ion-button
+      (click)="this.onLoginButtonPressed()"
+      fill="outline"
+    >
+      login
+    </ion-button>
+  </ion-item>
+</ion-content>

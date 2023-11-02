@@ -1,0 +1,51 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-item>
+  <ion-title>
+    Horse Cards 2
+  </ion-title>
+</ion-item>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="this.isHorsesListLoaded">
+    <ion-card *ngFor="let horse of this.horsesList">
+      <ion-card-title>
+        {{horse.horseName}}
+      </ion-card-title>
+      <ion-card-content>
+        Dam: {{horse.damName}} <br/>
+        Sire: {{horse.sireName}} <br/>
+        DamSire: {{horse.damSireName}} <br/>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+
+<!--
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row *ngFor="let horse of this.horsesList">
+      <ion-card>
+        <ion-grid>
+          <ion-row>
+            {{horse.horseId}}
+          </ion-row>
+          <ion-row>
+            {{horse.horseName}}
+          </ion-row>
+          <ion-row>
+            {{horse.damName}}
+          </ion-row>
+          <ion-row>
+            {{horse.sireName}}
+          </ion-row>
+          <ion-row>
+            {{horse.damSireName}}
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+-->

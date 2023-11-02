@@ -1,0 +1,18 @@
+<ion-item *ngIf=this.isStallsOccupanciesListLoaded>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="cell-class">
+        <ion-radio-group
+          [(ngModel)]="this.stallOccupancy"
+        >
+          <ion-item *ngFor="let stallOccupancy of this.stallsOccupanciesList">
+            <ion-label>{{stallOccupancy.name}}</ion-label>
+            <ion-radio slot="end" [value]="stallOccupancy">{{stallOccupancy.name}}</ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-item>

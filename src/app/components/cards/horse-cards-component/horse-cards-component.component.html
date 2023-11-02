@@ -1,0 +1,33 @@
+<!--<ion-list>-->
+  <ion-card
+    class="ion-card-class"
+    center
+    text-center
+    *ngFor="let horse of this.horsesV2sList"
+    (click)="this.goToHorseView(horse)"
+    button="true"
+  >
+    <ion-card-content class="ion-card-class">
+      <ion-grid>
+        <ion-row class="ion-card-class">
+          <ion-col>
+            <ion-item>
+              <ion-text>
+                Name: {{horse.horseName}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-text>
+                Reg#: {{horse.horseRegistrationNumber}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+<!--</ion-list>-->

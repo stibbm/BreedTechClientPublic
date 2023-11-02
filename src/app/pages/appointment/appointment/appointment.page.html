@@ -1,0 +1,45 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-title>
+      Appointment
+    </ion-title>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      color="danger"
+      expand="block"
+      (click)="this.goToCreateAppointmentPage()"
+    >
+      Create Appointment
+    </ion-button>
+  </ion-item>
+
+  <ion-item *ngIf="this.isAppointmentsListLoaded">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col size="2" class="cell-title">Id</ion-col>
+        <ion-col size="2" class="cell-title">Horse Name</ion-col>
+        <ion-col size="2" class="cell-title">User</ion-col>
+        <ion-col size="2" class="cell-title">Created By</ion-col>
+        <ion-col size="2" class="cell-title">Appointment Status</ion-col>
+        <ion-col size="2" class="cell-title">Created At</ion-col>
+      </ion-row>
+
+      <ion-row *ngFor="let appointment of this.appointmentsList" tappable (click)="goToAppointmentPage(appointment)">
+        <ion-col size="2" class="cell-class">{{appointment.id}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointment.horseName}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointment.userFirstAndLastName}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointment.createdByUserFirstAndLastName}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointment.appointmentStatus}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointment.createdAtTimestamp}}</ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-item>
+</ion-content>
+

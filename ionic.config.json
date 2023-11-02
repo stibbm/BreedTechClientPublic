@@ -1,0 +1,7 @@
+{
+  "name": "dynamic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

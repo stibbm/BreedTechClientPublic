@@ -1,0 +1,98 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-title>
+      User
+    </ion-title>
+  </ion-item>
+
+  <ion-item *ngIf="this.isUserLoaded">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" class="cell-title">
+          Email Address
+        </ion-col>
+        <ion-col size="4" class="cell-class">
+          {{this.user.emailAddress}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="cell-title">
+          First Name
+        </ion-col>
+        <ion-col size="4" class="cell-class">
+          {{this.user.firstName}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="cell-title">
+          Last Name
+        </ion-col>
+        <ion-col size="4" class="cell-class">
+          {{this.user.lastName}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item-divider></ion-item-divider>
+
+  <ion-item>
+    <ion-title>
+      Appointments
+    </ion-title>
+  </ion-item>
+
+  <ion-item *ngIf="this.isAppointmentWithCostSummarysListLoaded">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col size="2" class="cell-title">Id</ion-col>
+        <ion-col size="2" class="cell-title">Horse Name</ion-col>
+        <ion-col size="2" class="cell-title">Status</ion-col>
+        <ion-col size="2" class="cell-title">Amount Due</ion-col>
+        <ion-col size="2" class="cell-title">Amount Paid</ion-col>
+        <ion-col size="2" class="cell-title">Remaining Due</ion-col>
+      </ion-row>
+
+      <ion-row
+        *ngFor="let appointmentWithCostSummary of appointmentWithCostSummarysList"
+        tappable
+        (click)="this.goToAppointmentDetailsUsingAppointmentWithCostSummaryPage(appointmentWithCostSummary)"
+      >
+        <ion-col size="2" class="cell-class">{{appointmentWithCostSummary.id}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointmentWithCostSummary.horseName}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointmentWithCostSummary.status}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointmentWithCostSummary.amountDueDollarsReadable}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointmentWithCostSummary.amountPaidDollarsReadable}}</ion-col>
+        <ion-col size="2" class="cell-class">{{appointmentWithCostSummary.remainingAmountDueDollarsReadable}}</ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-item>
+
+  <!--
+  <ion-item *ngIf="this.isAppointmentV2DisplayablesListLoaded">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" class="cell-title">Id</ion-col>
+        <ion-col size="3" class="cell-title">Horse Name</ion-col>
+        <ion-col size="3" class="cell-title">Status</ion-col>
+
+
+      </ion-row>
+      <ion-row *ngFor="let appointmentV2Displayable of this.appointmentV2DisplayablesList"
+               tappable (click)="this.goToAppointmentDetailsPage(appointmentV2Displayable)">
+        <ion-col size="3" class="cell-class">{{appointmentV2Displayable.id}}</ion-col>
+        <ion-col size="3" class="cell-class">{{appointmentV2Displayable.horseName}}</ion-col>
+        <ion-col size="3" class="cell-class">{{appointmentV2Displayable.appointmentStatus}}</ion-col>
+
+
+      </ion-row>
+    </ion-grid>
+  </ion-item>-->
+
+
+</ion-content>

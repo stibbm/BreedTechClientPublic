@@ -1,0 +1,98 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content>
+
+
+  <ion-item>
+    <ion-label>
+      Email Address
+    </ion-label>
+    <ion-input
+      [(ngModel)]="this.filterByEmailAddress"
+    >
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      First Name
+    </ion-label>
+    <ion-input
+      [(ngModel)]="this.filterByFirstName"
+    >
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Last Name
+    </ion-label>
+    <ion-input
+      [(ngModel)]="this.filterByLastName"
+    >
+
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      (click)="this.onApplyFilterButtonPressed()"
+      fill="outline"
+    >
+      Filter
+    </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      (click)="onCreateUserButtonPressed()"
+      fill="outline"
+    >
+      Create User
+    </ion-button>
+  </ion-item>
+  <ion-item>
+    <mat-table [dataSource]="this.usersList">
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>First Name</th>
+        <td mat-cell *matCellDef="let element">{{element.firstName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="emailAddress">
+        <th mat-header-cell *matHeaderCellDef>Email Address</th>
+        <td mat-cell *matCellDef="let element">{{element.emailAddress}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <ion-button
+            mat-button
+            (click)="this.onViewChargesHistoryButtonPressed(element)"
+            fill="outline"
+            >
+            View Charges History
+          </ion-button>
+        </td>
+      </ng-container>
+
+
+      <tr
+        mat-header-row
+        *matHeaderRowDef="displayColumns"
+      >
+      </tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: this.displayColumns"
+      >
+      </tr>
+    </mat-table>
+  </ion-item>
+</ion-content>

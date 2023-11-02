@@ -1,0 +1,59 @@
+<app-company-header-v2></app-company-header-v2>
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-title>Create Account</ion-title>
+  </ion-item>
+
+  <ion-card>
+    <form>
+      <ion-item lines="full">
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" required></ion-input>
+      </ion-item>
+    </form>
+  </ion-card>
+
+  <ion-item>
+    <ion-button shape="round"> Sign in </ion-button>
+  </ion-item>
+</ion-content>
+
+<!--
+<ion-content [fullscreen]="true">
+  <div class="card-container">
+    <ion-card>
+      <ion-row>
+        <ion-col size-md="3" size="12" class="ion-padding ion-blue-bkg">
+
+        </ion-col>
+        <ion-col size-md="9" size="12" class="welcome">
+          <ion-card-header>
+            <ion-card-title>
+              Welcome to login page
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-button shape="round" color="primary"> Sign in </ion-button>
+          </ion-card-content>
+
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>-->

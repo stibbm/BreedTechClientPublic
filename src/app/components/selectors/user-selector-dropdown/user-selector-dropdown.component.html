@@ -1,0 +1,9 @@
+<ion-list>
+  <ion-item *ngIf="this.isUsersListLoaded">
+    <ion-select placeholder="Select User">
+      <ion-select-option *ngFor="let user of usersList" [value]="this.user">
+        {{user.emailAddress}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>

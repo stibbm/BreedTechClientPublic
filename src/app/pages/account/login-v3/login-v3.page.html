@@ -1,0 +1,34 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content
+  [fullscreen]="true"
+>
+  <ion-item
+    lines="full"
+  >
+    <ion-label
+      position="floating"
+    >
+      Email
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="this.emailAddress"></ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" [(ngModel)]="this.password"></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <ion-button
+        (click)="this.onLoginButtonPressed()"
+        color="danger"
+        expand="block"
+      >
+        Sign In
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

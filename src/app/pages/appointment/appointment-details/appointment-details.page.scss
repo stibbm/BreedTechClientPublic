@@ -1,0 +1,26 @@
+.cell-title {
+  border-color: black;
+  border-width: .01em;
+  border-style: solid; margin-bottom : -1px;
+  background-color: orangered;
+  color: white;
+  expand: block;
+};
+
+.cell-class {
+  border-color: black;
+  border-width: .01em;
+  border-style: solid; margin-bottom : -1px;
+  color: black;
+  expand: block;
+  background-color: white;
+
+}
+
+.ion-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+  background: blue;
+  width: 500px;
+}

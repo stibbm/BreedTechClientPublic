@@ -1,0 +1,44 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-title>
+      Action Types
+    </ion-title>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      color="danger"
+      expand="block"
+      (click)="this.goToCreateAppointmentActionTypePage()"
+    >
+      Create Action Type
+    </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="cell-title">Id</ion-col>
+        <ion-col class="cell-title">Name</ion-col>
+        <ion-col class="cell-title">Description</ion-col>
+        <ion-col class="cell-title">Amount</ion-col>
+        <ion-col class="cell-title">Sms Message</ion-col>
+      </ion-row>
+      <ion-row
+        *ngFor="let appointmentActionTypeDisplayable of appointmentActionTypeDisplayablesList"
+        tappable
+        (click)="goToAppointmentActionTypePage(appointmentActionTypeDisplayable)"
+      >
+        <ion-col class="cell-class">{{appointmentActionTypeDisplayable.id}}</ion-col>
+        <ion-col class="cell-class">{{appointmentActionTypeDisplayable.name}}</ion-col>
+        <ion-col class="cell-class">{{appointmentActionTypeDisplayable.description}}</ion-col>
+        <ion-col class="cell-class">{{appointmentActionTypeDisplayable.amount}}</ion-col>
+        <ion-col class="cell-class">{{appointmentActionTypeDisplayable.smsMessage}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-item *ngIf="this.isAppointmentActionTypeDisplayablesListLoaded">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" class="cell-title">Actions</ion-col>
+      <ion-col size="8" class="cell-class">
+        <ion-radio-group
+          [(ngModel)]="this.appointmentActionTypeDisplayable"
+        >
+          <ion-item *ngFor="let appointmentActionTypeDisplayable of appointmentActionTypeDisplayablesList">
+            <ion-grid>
+              <ion-row>
+                {{appointmentActionTypeDisplayable.name}}
+              </ion-row>
+              <ion-row>
+                {{appointmentActionTypeDisplayable.description}}
+              </ion-row>
+              <ion-row>
+                {{appointmentActionTypeDisplayable.amount}}
+              </ion-row>
+            </ion-grid>
+            <ion-radio slot="end" [value]="appointmentActionTypeDisplayable">{{appointmentActionTypeDisplayable.name}}</ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>

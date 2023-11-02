@@ -1,0 +1,59 @@
+<app-company-header></app-company-header>
+
+<ion-content>
+  <ion-item>
+    <ion-button
+      mat-button
+      (click)="onCreateSemenCollectionButtonPressed()"
+      fill="outline"
+    >
+
+      Log Semen Collection
+    </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <mat-table mat-table [dataSource]="this.stallionViewsList">
+
+      <ng-container matColumnDef="horseName">
+        <th mat-header-cell *matHeaderCellDef>Horse Name</th>
+        <td mat-cell *matCellDef="let element">{{element.horseName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="stallName">
+        <th mat-header-cell *matHeaderCellDef>Stall Name</th>
+        <td mat-cell *matCellDef="let element">{{element.stallName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastCollectionDateString">
+        <th mat-header-cell *matHeaderCellDef>Last Collection Date</th>
+        <td mat-cell *matCellDef="let element">{{element.lastCollectionDateString}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nextCollectionDateString">
+        <th mat-header-cell *matHeaderCellDef>Next Collection Date</th>
+        <td mat-cell *matCellDef="let element">{{element.nextCollectionDateString}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <div>
+            <ion-button
+              mat-button
+              fill="outline"
+            >View Collection History</ion-button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="this.displayColumns">
+      </tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: this.displayColumns;"
+      >
+      </tr>
+    </mat-table>
+  </ion-item>
+</ion-content>

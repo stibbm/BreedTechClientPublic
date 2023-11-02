@@ -1,0 +1,139 @@
+<ion-item>
+  <ion-title>
+    Create Horse
+  </ion-title>
+</ion-item>
+
+<ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" class="cell-title">Horse Name</ion-col>
+      <ion-col size="8" class="cell-class"><ion-input [(ngModel)]="this.name" type="text"></ion-input></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Registration #</ion-col>
+      <ion-col size="8" class="cell-class"><ion-input [(ngModel)]="this.registrationNumber" type="text"></ion-input></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Type</ion-col>
+      <ion-col size="8" class="cell-class">
+
+        <ion-radio-group
+          [(ngModel)]="this.horseTypeSelection"
+        >
+
+          <ion-item>
+            <ion-label>Stallion</ion-label>
+            <ion-radio slot="end" value="stallion">Stallion</ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Mare</ion-label>
+            <ion-radio slot="end" value="mare">Mare</ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Dam</ion-col>
+      <ion-col size="8" class="cell-class"><ion-input [(ngModel)]="this.dam" type="text"></ion-input></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Sire</ion-col>
+      <ion-col size="8" class="cell-class"><ion-input [(ngModel)]="this.sire" type="text"></ion-input></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">Dam Sire</ion-col>
+      <ion-col size="8" class="cell-class"><ion-input [(ngModel)]="this.damSire" type="text"></ion-input></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2" class="cell-title">User</ion-col>
+      <ion-col size="8" class="cell-class">
+        <app-user-selector-radio>
+          
+        </app-user-selector-radio>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-item>
+
+
+<!--<ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="cell-title">
+        <ion-text>
+          Horse Name
+        </ion-text>
+      </ion-col>
+      <ion-col class="cell-class">
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="this.name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-item>
+        <ion-label>Registration Number: </ion-label>
+        <ion-input type="text" [(ngModel)]="this.registrationNumber"></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <ion-col>
+      <ion-item>
+        <ion-label>Horse Type: </ion-label>
+        <ion-radio-group
+          [(ngModel)]="this.horseTypeSelection">
+          <ion-item>
+
+          </ion-item>
+          <ion-item>
+            <ion-label>Stallion</ion-label>
+            <ion-radio slot="end" value="stallion">Stallion</ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Mare</ion-label>
+            <ion-radio slot="end" value="mare">Mare</ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item>
+        <ion-label>Dam: </ion-label>
+        <ion-input type="text" [(ngModel)]="this.dam"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item>
+        <ion-label>Sire: </ion-label>
+        <ion-input type="text" [(ngModel)]="this.sire"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item>
+        <ion-label>DamSire: </ion-label>
+        <ion-input type="text" [(ngModel)]="this.damSire"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <app-user-selector></app-user-selector>
+    </ion-col>
+  </ion-grid>
+</ion-item>-->

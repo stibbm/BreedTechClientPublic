@@ -1,0 +1,29 @@
+<app-company-header-v2>
+</app-company-header-v2>
+
+<ion-content>
+  <ion-item>
+    <ion-title>
+      Add Stallion Contract
+  </ion-title>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      type="file"
+      (change)="onFileSelected($event)"
+    >
+
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button
+      mat-button
+      (click)="this.onCreateStallionContractButtonPressed()"
+      color="danger"
+      expand="block"
+    >
+      Create
+    </ion-button>
+  </ion-item>
+</ion-content>

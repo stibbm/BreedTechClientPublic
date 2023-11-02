@@ -1,0 +1,7 @@
+<ion-grid *ngIf="this.isCalendarDatesLoaded===true">
+  <ion-row>
+    <ion-col *ngFor="let calendarDate of this.calendarDatesList">
+      CalendarDate: {{calendarDate.dayOfMonthNumber}}
+    </ion-col>
+  </ion-row>
+</ion-grid>

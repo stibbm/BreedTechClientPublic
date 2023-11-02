@@ -1,0 +1,32 @@
+<app-company-header-v2></app-company-header-v2>
+
+<!--<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-title>Create Appointment Action</ion-title>
+  </ion-item>
+
+  <app-appointment-action-type-radio-selector
+    #appointmentActionTypeRadioSelectorComponent
+  >
+  </app-appointment-action-type-radio-selector>
+
+
+</ion-content>-->
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-title>Create Appointment Action</ion-title>
+  </ion-item>
+    <app-appointment-action-type-selector
+      #appointmentActionTypeSelectorComponent
+    >
+    </app-appointment-action-type-selector>
+
+  <ion-item>
+    <ion-button
+      (click)="onCreateAppointmentActionButtonPressed()"
+      color="danger"
+      expand="block"
+    >Create</ion-button>
+  </ion-item>
+</ion-content>

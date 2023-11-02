@@ -1,0 +1,19 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true">
+  <app-create-horse-input
+    #createHorseInputComponent
+  >
+  </app-create-horse-input>
+
+  <ion-item lines="full">
+    <ion-button
+      color="danger"
+      (click)="onCreateHorseButtonPressed()"
+      expand="block"
+    >
+      Add Horse
+    </ion-button>
+  </ion-item>
+
+</ion-content>

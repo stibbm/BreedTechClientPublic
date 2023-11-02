@@ -1,0 +1,22 @@
+<app-company-header-v2></app-company-header-v2>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-title>
+      Create Stall
+    </ion-title>
+  </ion-item>
+  <app-create-stall-input
+    #createStallInputComponent
+  ></app-create-stall-input>
+  <ion-item>
+    <ion-button
+      (click)="onCreateStallButtonPressed()"
+      expand="block"
+      color="danger"
+    >
+      Add Stall
+    </ion-button>
+  </ion-item>
+</ion-content>
+
