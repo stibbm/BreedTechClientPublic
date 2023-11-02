@@ -1,4 +1,4 @@
-# Frontend V1: 
+# Frontend V1 (Ionic + Angular): 
 
 ## Horse Management:
 
